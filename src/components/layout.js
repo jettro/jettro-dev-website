@@ -14,6 +14,12 @@ import "./layout.css"
 import Footer from "./footer"
 import { Container } from "react-bootstrap"
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee, faUserTie  } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faCheckSquare, faCoffee, faUserTie)
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -27,7 +33,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle="Jettro"/>
+      <Header siteTitle="Jettro Coenradie"/>
       <Container>
         <main>{children}</main>
       </Container>
